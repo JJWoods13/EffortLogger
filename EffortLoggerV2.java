@@ -1,10 +1,7 @@
 package effortLoggerV2;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
@@ -15,9 +12,9 @@ public class EffortLoggerV2 extends Application {
     private TabPane tabPane;
     private EffortConsole effortConsole;
     private PlanningPoker planningPoker;
-    private EffortLogEditor effortLogEditor;
     private DefectConsole defectConsole;
-    private Logs logs;
+    private EffortLog effortLog;
+    private DefectLog defectLog;
     private Definitions definitions;
     private LogManager logManager;
 	public static final int WIN_SIZE_X = 1000, WIN_SIZE_Y = 600;
@@ -29,13 +26,12 @@ public class EffortLoggerV2 extends Application {
     public void start(Stage primaryStage) {
         primaryStage.setTitle("EffortLogger V2");
         
-        
 		tabPane = new TabPane();
 		effortConsole = new EffortConsole();
 		planningPoker = new PlanningPoker();
-		effortLogEditor = new EffortLogEditor();
 		defectConsole = new DefectConsole();
-		logs = new Logs();
+		effortLog = new EffortLog();
+		defectLog = new DefectLog();
 		definitions = new Definitions();
 		logManager = new LogManager();
 
@@ -49,16 +45,16 @@ public class EffortLoggerV2 extends Application {
 		tab2.setContent(planningPoker);
 		
 		Tab tab3 = new Tab();
-		tab3.setText("EffortLogEditor");
-		tab3.setContent(effortLogEditor);
+		tab3.setText("Defect Console");
+		tab3.setContent(defectConsole);
 		
 		Tab tab4 = new Tab();
-		tab4.setText("Defect Console");
-		tab4.setContent(defectConsole);
+		tab4.setText("EffortLog");
+		tab4.setContent(effortLog);
 		
 		Tab tab5 = new Tab();
-		tab5.setText("Logs");
-		tab5.setContent(logs);
+		tab5.setText("DefectLog");
+		tab5.setContent(defectLog);
 		
 		Tab tab6 = new Tab();
 		tab6.setText("Definitions");
