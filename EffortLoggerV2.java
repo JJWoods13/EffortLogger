@@ -1,4 +1,5 @@
 package effortLoggerV2;
+//Author: James Woods
 
 import javafx.application.Application;
 import javafx.scene.Scene;
